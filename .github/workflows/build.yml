@@ -25,7 +25,7 @@ jobs:
           arguments: build --no-daemon
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: riderstand-jar
           path: build/libs/riderstand-1.0.0.jar
