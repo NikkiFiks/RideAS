@@ -1,1 +1,11 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+[[mods]]
+modId="riderstand"
+version="1.0.0"
+displayName="Rider Stand Mod"
+description='''
+Мод для управления Armor Stand
+'''
 
