@@ -1,1 +1,50 @@
+buildscript {
+    repositories {
+        maven { url = 'https://maven.minecraftforge.net' }
+        mavenCentral()
+        gradlePluginPortal()
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:5.1.+'
+    }
+}
 
+apply plugin: 'net.minecraftforge.gradle'
+
+group = 'com.example'          // Заменить на свой пакет
+version = '1.0.0'
+archivesBaseName = 'riderstand'
+
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+    runs {
+        client {
+            workingDirectory project.file('run')
+            args '--username', 'Dev'
+        }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url = 'https://maven.minecraftforge.net' }
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+}
+
+jar {
+    manifest {
+        attributes([
+            'Specification-Title'   : 'RiderStand',
+            'Specification-Version' : '1.0',
+            'Implementation-Title'  : project.name,
+            'Implementation-Version': project.version
+        ])
+    }
+}
